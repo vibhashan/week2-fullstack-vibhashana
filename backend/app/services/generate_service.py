@@ -6,7 +6,6 @@ from app.models.payload_model import Payload
 
 
 async def generate(payload: Payload):
-    # TODO Improve error handling
     with OpenRouter(api_key=os.getenv("OPENROUTER_API_KEY")) as client:
         result = await client.chat.send_async(
             model=payload.model,
@@ -21,7 +20,6 @@ async def generate(payload: Payload):
                     """,
                 },
             ],
-            # TODO Implement streaming
             response_format={
                 "type": "json_schema",
                 "json_schema": {

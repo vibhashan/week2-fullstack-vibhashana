@@ -7,7 +7,7 @@ from data.model_options import model_options
 
 # Load environment variables once at startup
 load_dotenv()
-API_BASE_URL = os.getenv("FAST_API_BASE_URL", "").rstrip("/")
+FAST_API_BASE_URL = os.getenv("FAST_API_BASE_URL", "").rstrip("/")
 
 # 1. Page Configuration
 st.set_page_config(page_title="Synthetix", layout="wide")
@@ -64,7 +64,7 @@ with center_col:
                     # Using requests.Session() handles connections more efficiently
                     with requests.Session() as session:
                         response = session.post(
-                            f"{API_BASE_URL}/generate", json=payload, timeout=10
+                            f"{FAST_API_BASE_URL}/generate", json=payload, timeout=10
                         )
                         data = response.json()
 

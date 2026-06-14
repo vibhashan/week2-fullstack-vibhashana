@@ -1,5 +1,4 @@
 import os
-from turtle import onclick
 import requests
 import streamlit as st
 from dotenv import load_dotenv
@@ -80,7 +79,7 @@ with center_col:
                         )
 
                 except requests.exceptions.ConnectionError:
-                    st.error(f"Cannot connect to backend at {API_BASE_URL}")
+                    st.error(f"Cannot connect to backend at {FAST_API_BASE_URL}")
                 except requests.exceptions.Timeout:
                     st.error(
                         "The request timed out. Please try again later or choose a different model."

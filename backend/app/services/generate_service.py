@@ -2,13 +2,14 @@ import json
 from openrouter import OpenRouter
 from app.models.result_model import Result
 import os
+from app.models.payload_model import Payload
 
 
-async def generate(input: str):
+async def generate(payload: Payload):
     # TODO Improve error handling
     with OpenRouter(api_key=os.getenv("OPENROUTER_API_KEY")) as client:
         result = await client.chat.send_async(
-            model="openrouter/free",
+            model=payload.model,
             messages=[
                 {
                     "role": "user",
@@ -16,7 +17,7 @@ async def generate(input: str):
                     You are a helpful assistant that generates a title and a summary based on user input. The title
                     must not be greater than 10 words and the summary must be at least 50 words.
 
-                    Input: {input}
+                    Input: {payload.input}
                     """,
                 },
             ],

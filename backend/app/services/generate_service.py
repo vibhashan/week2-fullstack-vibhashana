@@ -8,8 +8,7 @@ async def generate(input: str):
     # TODO Improve error handling
     with OpenRouter(api_key=os.getenv("OPENROUTER_API_KEY")) as client:
         result = await client.chat.send_async(
-            # TODO Enable model selection
-            model="nvidia/nemotron-3-super-120b-a12b:free",
+            model="openrouter/free",
             messages=[
                 {
                     "role": "user",

@@ -11,8 +11,6 @@ FAST_API_BASE_URL = os.getenv("FAST_API_BASE_URL", "").rstrip("/")
 # 1. Page Configuration
 st.set_page_config(page_title="Synthetix", layout="wide")
 
-st.balloons()
-
 st.title("Synthetix", text_alignment="center", anchor=False)
 st.caption("Powered by multiple models", text_alignment="center")
 

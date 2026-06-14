@@ -26,5 +26,5 @@ def health():
 @app.post("/generate", status_code=200)
 async def generate(payload: Payload):
     # TODO Add guardrails for topic
-    result = await generate_service.generate(payload.input)
+    result = await generate_service.generate(payload)
     return result

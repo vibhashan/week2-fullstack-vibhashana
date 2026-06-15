@@ -1,10 +1,7 @@
 import requests
 import streamlit as st
-from dotenv import load_dotenv
 from data.model_options import model_options
 from services.backend_service import call_backend
-
-load_dotenv()
 
 # 1. Page Configuration
 st.set_page_config(page_title="Synthetix", layout="wide")

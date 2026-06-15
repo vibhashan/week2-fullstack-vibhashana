@@ -1,5 +1,8 @@
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 FAST_API_BASE_URL = os.getenv("FAST_API_BASE_URL").rstrip("/")
 
